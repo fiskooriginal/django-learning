@@ -18,8 +18,6 @@ def exersize1(num):
     print(f"\n{result}")
 
     return 0
-
-
 def exersize2(basenum, bordernum):
     # Ввести произвольное число в консоле
     # Ввести пограничное число в консоле
@@ -28,19 +26,15 @@ def exersize2(basenum, bordernum):
     # Если 1-ое число больше пограничного более, чем в 3 раза, сообщить об этом
 
     if (basenum < bordernum):
-        print("Произвольное число МЕНЬШЕ пограничного.")
+        return "Произвольное число МЕНЬШЕ пограничного."
     elif (basenum > bordernum):
         if (basenum > 3 * bordernum):
-            print("Произвольное число БОЛЬШЕ пограничного более, чем в 3 раза.")
-        else:
-            print("Произвольное число БОЛЬШЕ пограничного.")
-    else:
-        print("Произвольное число РАВНО пограничному.")
-    return 0
-
+            return "Произвольное число БОЛЬШЕ пограничного более, чем в 3 раза."
+        return "Произвольное число БОЛЬШЕ пограничного."
+    return "Произвольное число РАВНО пограничному."
 
 if __name__ == '__main__':
     exersize1(237)
     basenum = int(input("Введите произвольное число: "))
     bordernum = int(input("Введите пограничное число: "))
-    exersize2(basenum, bordernum)
+    print(exersize2(basenum, bordernum))
