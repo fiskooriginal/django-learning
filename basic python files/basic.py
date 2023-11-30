@@ -1,8 +1,8 @@
-def exersize1(num):
+def exersize1(end):
     # Напишите программу, которая выводит чётные числа из заданного списка
     # и останавливается, если встречает число 237.
     array = []
-    for i in range(num-15, num+16):
+    for i in range(end-15, end+16):
         array.append(i)
 
     print("Заданный список: ", end="")
@@ -11,7 +11,7 @@ def exersize1(num):
 
     result = "Чётные числа: "
     for i in array:
-        if i == num: break
+        if i == end: break
         if i % 2 == 0:
             result += f"{i} "
 
