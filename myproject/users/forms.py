@@ -9,7 +9,7 @@ User = get_user_model()
 class UserCreationForm(UserCreationForm):
     email = forms.EmailField(
         label=_("Email"),
-        max_length=255,
+        max_length=254,
         widget=forms.EmailField(attrs={'autocomplete': 'email'})
     )
     class Meta(UserCreationForm.Meta):

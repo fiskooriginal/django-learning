@@ -1,5 +1,6 @@
 from django.urls import path, include
-from mySite.users.views import Register
+
+from myproject.users.views import Register
 
 urlpatterns = [
     path('', include('django.contrib.auth.urls')),

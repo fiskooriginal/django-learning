@@ -5,5 +5,5 @@ from django.contrib.auth.admin import UserAdmin
 
 User = get_user_model()
 @admin.register(User)
-class Useradmin(UserAdmin):
+class UserAdmin(UserAdmin):
     pass
