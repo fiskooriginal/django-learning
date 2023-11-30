@@ -6,21 +6,18 @@ link = 'https://ru.wikipedia.org/wiki/100_%D0%B8%D0%B7%D0%B2%D0%B5%D1%81%D1%82%D
 page = urlopen(link)
 html = page.read().decode('utf=8')
 soup = BeautifulSoup(html, "html.parser")
-table = soup.find('table',class_="wikitable")
-quotes = set()
+table = soup.find('table', class_="wikitable")
+
+dataset = [[]]
 for row in table.find_all("tr"):
-    for cell in row.find_all("td"):
-        if cell.get_text() > '1996':
-            print(cell)
-            # quotes.add(tmp_quote)
-
-        # if row.extract("th").get_text() == "Год" and cell.get_text() > '1996':
-        #     print(row)
-        #     tmp_quote = cell.get_text()
-        # if count // 2 == 7:
-
-for quote in quotes:
-    print(quote)
+    rowset = []
+    for column in row.find_all("td"):
+        if column.get_text() != "":
+            rowset.append(column.get_text()[:-1:])
+    dataset.append(rowset)
+for data in dataset:
+    if data != [] and data[6] > '1995':
+        print(data)
 
 if __name__ == '__main__':
     pass
