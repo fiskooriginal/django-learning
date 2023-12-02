@@ -9,15 +9,19 @@ soup = BeautifulSoup(html, "html.parser")
 table = soup.find('table', class_="wikitable")
 
 dataset = [[]]
+
 for row in table.find_all("tr"):
     rowset = []
     for column in row.find_all("td"):
         if column.get_text() != "":
             rowset.append(column.get_text()[:-1:])
     dataset.append(rowset)
+
+# print("Quote\tHero\tActor\tMovie\tYear")
 for data in dataset:
     if data != [] and data[6] > '1995':
-        print(data)
+        # print(data)
+        print(data[2])
 
 if __name__ == '__main__':
     pass
