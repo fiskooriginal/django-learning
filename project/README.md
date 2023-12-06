@@ -1,4 +1,5 @@
 # **Logstream. Проект Django.**
+______
 ## **Гайд по запуску проекта (в терминале):**
 > pip install requirements.txt 
 >

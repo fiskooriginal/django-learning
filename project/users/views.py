@@ -1,8 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic import View
 from django.contrib.auth import login, authenticate
-
-from project.users.forms import UserCreationForm
+from users.forms import userCreationForm
 
 
 class Register(View):
@@ -10,12 +9,12 @@ class Register(View):
 
     def get(self, request):
         context = {
-            'form': UserCreationForm()
+            'form': userCreationForm()
         }
         return render(request, self.template_name, context)
 
     def post(self, request):
-        form = UserCreationForm(request.POST)
+        form = userCreationForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
