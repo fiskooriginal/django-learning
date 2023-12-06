@@ -18,9 +18,9 @@ class Register(View):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password')
-            user = authenticate(username=username, password=password)
-            login(request, user)
+            password = form.cleaned_data.get('password1')
+            thisUser = authenticate(username=username, password=password)
+            login(request, thisUser)
             return redirect('home')
 
         context = {
