@@ -3,7 +3,7 @@
 # **Logstream. Проект Django.**
 ______
 1. [X] Задания по скрапингу в 'scraping'
-2. [X] Задания по базовому python в 'python homeworks'
+2. [X] Задания по базовому Python в 'python homeworks'
 ______
 ## **Гайд по запуску проекта (в терминале):**
 > pip install requirements.txt 
